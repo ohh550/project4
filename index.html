@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Cards</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <div class="box">
+            <div class="retry">
+                <button id="resetBtn"><img src="img/restart.png" alt="Restart Button"></button>
+            </div>
+        </div>
+        <div class="box">
+            <p id="text"></p>
+        </div>
+        <div class="box">
+            <div class="cards">
+                <div class="card card0">
+                    <div class="front"></div>
+                    <div class="back"><img src="" alt=""></div>
+                </div>
+                <div class="card card1">
+                    <div class="front"></div>
+                    <div class="back"><img src="" alt=""></div>
+                </div>
+                <div class="card card2">
+                    <div class="front"></div>
+                    <div class="back"><img src="" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="cover">
+        <p id="date"></p>
+        <p class="txt">Test your luck Today!</p>
+        <p class="guide">Pick 2 of 3 cards, that's your luck today! And don't feel bad, you can come back tommorow!</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

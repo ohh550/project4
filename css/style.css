@@ -1,0 +1,242 @@
+@-webkit-keyframes cards {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cards {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes btn {
+  to {
+    margin: 20px auto 0;
+    opacity: .9;
+  }
+}
+
+@keyframes btn {
+  to {
+    margin: 20px auto 0;
+    opacity: .9;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background: #00000084;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+#cover #date {
+  font-size: 26px;
+}
+
+#cover .txt {
+  padding: 10px 0;
+  font-size: 34px;
+}
+
+#cover.uncover {
+  top: -100%;
+}
+
+main {
+  min-height: 100vh;
+  background: url("../img/background.jpg") center center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+}
+
+main .box #text {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #0000006d;
+}
+
+main .box #text.active {
+  padding: 10px;
+}
+
+main .box button {
+  display: block;
+  max-width: 40px;
+  border: none;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0px auto 0;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-animation-name: btn;
+          animation-name: btn;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  cursor: pointer;
+}
+
+main .box button:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-box-shadow: 0 0 6px 6px rgba(255, 255, 255, 0.25);
+          box-shadow: 0 0 6px 6px rgba(255, 255, 255, 0.25);
+}
+
+main .box button img {
+  max-width: 100%;
+}
+
+main .box .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+main .box .cards .card {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 0.7/1;
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-animation: cards;
+          animation: cards;
+  -webkit-animation-duration: .8s;
+          animation-duration: .8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+main .box .cards .card:nth-of-type(2) {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+main .box .cards .card:nth-last-of-type(3) {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+main .box .cards .card .front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/front.jpg") center center;
+  background-size: cover;
+  z-index: 10;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+main .box .cards .card .back {
+  background-color: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+main .box .cards .card .back img {
+  width: 100%;
+  height: 100%;
+}
+
+main .box .cards .card.active .front {
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+main .box .cards .card.active .back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
